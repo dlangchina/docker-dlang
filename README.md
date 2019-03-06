@@ -10,3 +10,8 @@ docker pull dlangchina/dlang-dmd
 ```bash
 docker pull dlangchina/dlang-ldc
 ```
+
+# Docker pull command for gdc
+```bash
+docker pull dlangchina/dlang-gdc
+```

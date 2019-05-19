@@ -1,11 +1,18 @@
-FROM buildpack-deps:buster
+FROM fedora:30
 
-ENV GDC_VERSION 8
+ENV GDC_VERSION 9.1.1
 
-RUN apt-get update && apt-get install -y --no-install-recommends curl wget libevent-dev dub gdc-${GDC_VERSION} && rm -rf /var/lib/apt/lists/* && rm -rf /var/cache/apt/*
+ENV DMD_VERSION 2.086.0
+
+RUN dnf install -y wget gcc-gdc libgphobos
+
+RUN wget http://downloads.dlang.org/releases/2.x/2.086.0/dmd-${DMD_VERSION}-0.fedora.x86_64.rpm && rpm -ivh --nodeps dmd-${DMD_VERSION}-0.fedora.x86_64.rpm
+
+RUN rm -rf dmd-*
+
+RUN dnf autoremove && dnf clean all
 
 RUN set -ex && \
-	ln -s /usr/bin/gdc-${GDC_VERSION} /usr/bin/gdc && \
 	gdc  --version && \
 	dub --version
 

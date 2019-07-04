@@ -1,6 +1,6 @@
 FROM buildpack-deps:stretch
 
-ENV LDC_VERSION 1.15.0
+ENV LDC_VERSION 1.16.0
 ENV LDC_PATH /usr/local/ldc
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl wget && rm -rf /var/lib/apt/lists/* && rm -rf /var/cache/apt/*

@@ -1,13 +1,14 @@
-FROM buildpack-deps:stretch
+FROM debian:sid
 
-ENV DMD_VERSION 2.087.0
+ENV DMD_VERSION 2.091.0
 
-RUN apt-get update && apt-get install -y --no-install-recommends curl wget libevent-dev && rm -rf /var/lib/apt/lists/* && rm -rf /var/cache/apt/*
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends curl wget libevent-dev gcc libc6-dev && \
+    rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN set -ex && \
-	wget http://downloads.dlang.org/releases/2.x/${DMD_VERSION}/dmd_${DMD_VERSION}-0_amd64.deb && \
-	dpkg -i dmd_${DMD_VERSION}-0_amd64.deb && \
-	rm -rf dmd* && \
-	dmd --version && \
-	dub --version
-
+        wget http://downloads.dlang.org/releases/2.x/${DMD_VERSION}/dmd_${DMD_VERSION}-0_amd64.deb && \
+        dpkg -i dmd_${DMD_VERSION}-0_amd64.deb && \
+        rm -rf dmd* && \
+        dmd --version && \
+        dub --version

@@ -3,7 +3,7 @@ Docker images dockerfile for D Programming language.
 
 # Docker images
  * dmd 2.096.1 https://hub.docker.com/r/dlangchina/dlang-dmd
- * ldc 1.25.1 https://hub.docker.com/r/dlangchina/dlang-ldc
+ * ldc 1.26.0 https://hub.docker.com/r/dlangchina/dlang-ldc
  * gdc  https://hub.docker.com/r/dlangchina/dlang-gdc
 
 # Docker pull command for dmd

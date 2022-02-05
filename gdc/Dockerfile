@@ -1,6 +1,6 @@
 FROM debian:sid
 
-ENV GDC_VERSION 9.4.0-4
+ENV GDC_VERSION 9.4.0-5
 
 RUN apt-get update && \
     apt-get install -y gdc && \

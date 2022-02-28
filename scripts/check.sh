@@ -52,9 +52,9 @@ repo_tgas=$(git ls-remote --tags | awk -F'tags/' '{print $2}')
 echo -e "[tags]\n${repo_tgas}"
 
 # check
-check dmd ${dmd_latest}
-check ldc ${ldc_latest}
-check gdc ${gdc_latest}
+[ "$dmd_latest" != "" ] && check dmd ${dmd_latest}
+[ "$ldc_latest" != "" ] && check ldc ${ldc_latest}
+[ "$gdc_latest" != "" ] && check gdc ${gdc_latest}
 
 # push
 if [ ${update} -eq 1 ]; then

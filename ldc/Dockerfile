@@ -1,6 +1,6 @@
 FROM debian:sid
 
-ENV LDC_VERSION 1.29.0
+ENV LDC_VERSION 1.30.0
 ENV LDC_PATH /usr/local/ldc
 
 RUN apt-get update && \

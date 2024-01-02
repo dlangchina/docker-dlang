@@ -1,6 +1,6 @@
 FROM debian:sid
 
-ENV DMD_VERSION 2.106.0
+ENV DMD_VERSION 2.106.1
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends curl wget libevent-dev gcc libc6-dev && \
